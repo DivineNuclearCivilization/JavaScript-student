@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>07回调函数</title>
+	</head>
+	<body>
+		
+		<button id="btn">点击测试</button>
+		<!-- 
+		
+			1.什么函数才是回调函数
+			  1.程序员定义的
+			  2.程序员没有主动去调用
+			  3.但是最终它执行了（在某个时刻或者某个条件下）
+			2.常见的回调函数 
+			  1.DOM事件回调函数  this：发生事件的dom元素
+			  2.定时器回调函数    this： winodw
+			  
+			  3.ajax请求回调函数
+			  4.生命周期回调函数
+			
+		-->
+		<script type="text/javascript">
+		  //DOM事件回调函数
+			document.getElementById('btn').onclick=function(){
+				alert(this.innerText)
+				alert(this.innerHTML)
+			}
+			
+			//定时器
+			 //超时定时器
+			 //循环定时器
+			 
+			 //定时器回调函数
+			 setTimeout(function(){
+				 alert('到点了')
+			 },2000)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>06函数</title>
+	</head>
+	<body>
+		<!-- 
+		    1.什么是函数？（体现的一种封装的思想）
+			  实现特定功能的N条语句的封装体
+			  只有函数是可以执行的，其他类型的数据不能执行
+			2.为什么要用函数?
+			  提高代码复用性
+			  便于阅读交流
+			3.如何定义函数?
+			   函数声明
+			   函数表达式
+			4.如何调用执行函数?
+			 1.text():直接调用
+			 2.obj.text() : 通过对象调用
+			 3.new text() : new 调用
+			 4.text.call/apply(obj)  : 临时让text(函数)成为obj(对象)
+			 的方法调用 obj.text() o  bj对象本身里面没有这个方法
+		      方法4验证：
+			  var obj={}
+			  function test(){
+				  this.xxx='atguigu'
+			  }
+			  //obj.test()  //不能直接调用 压根没有
+			  test.call/apply(obj) //obj.test() //可以让一个函数成为指定任意对象的方法进行调用
+			  console.log(obj.xxx) //atguigu
+		 -->
+		 
+	</body>
+	<!-- 写编程实现以下功能需求？
+	  1.根据年龄输出对应信息
+	  2.如果小于18输出未成年，再等等
+	  3.如果大于60输出算了吧
+	  4.其它，输出刚好 -->
+	  
+	  <script type="text/javascript">
+	  	function showInfo(age){
+			if(age<0){
+				console.log('未出生玩毛线')
+			}else if(age>=0 && age<18){
+				console.log('未成年在等等')
+			}else if(age>60){
+				console.log('太老了 算了吧')
+			}else{
+				console.log('刚刚好')
+			}
+		}
+		showInfo(-20);
+		showInfo(20);
+		showInfo(80);
+	  </script>
+	  
+	  <script type="text/javascript">
+	  	// 3.如何定义函数?
+	  	//    函数声明
+	  	//    函数表达式
+		
+			//    函数声明
+			function fn1(){
+				console.log('这是函数声明式')
+			}
+			//函数表达式
+			var fn2=function(){
+				console.log('这是函数表达式')
+			}
+	  </script>
+	  <script type="text/javascript">
+	  	// 4.如何调用执行函数?
+		
+	  </script>
+</html>

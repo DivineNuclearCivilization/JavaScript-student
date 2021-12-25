@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>08-IIFE</title>
+	</head>
+	<body>
+		<!-- 
+		    1.理解
+			    全称：Immediately-Invoked function Expression （立即执行函数表达式）
+			2.作用
+			    隐藏实现
+			    不会影响（污染）外部命名空间（全局命名空间）
+		 -->
+	</body>
+	<script type="text/javascript">
+	// 全称：Immediately-Invoked function Expression （立即执行函数表达式）
+		(function(){  //匿名函数自调用 被包含于IIFE
+			console.log('匿名函数自调用')
+			var a=3
+			console.log(a+3)
+		})();
+		var a=4
+		console.log(a);
+	//2.作用
+	  //    隐藏实现
+	  //  不会影响（污染）外部命名空间（全局命名空间）
+	  console.log('--------------------');
+		(function(){
+			var a=1	
+			function test(){
+				console.log(++a); //隐藏实现
+				console.log('ewq');
+			};
+			function test2(){
+				console.log('test2()') //隐藏实现
+			}
+			window.$=function(){  //向外暴露了一个函数
+				return {
+					test:test
+				}
+			};
+		})();
+		console.log($());
+		 $().test(); //1.$是一个方法/函数2.$执行后返回的是一个对象
+		
+	</script>
+</html>

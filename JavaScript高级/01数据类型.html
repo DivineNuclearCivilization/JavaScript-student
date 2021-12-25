@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>01数据类型</title>
+	</head>
+	<body>
+<!-- 
+		1.6种类型：基本数据(值)类型 
+		    1.String    :任意字符串
+			2.Number    :任意数字
+			3.boolean   :true/false
+			4.undefined :undefined
+			5.null      :null
+			    duix(引用)数据类型
+		    6.Object：  :任意对象
+			   Function :一种特别的对象（可以执行）
+			   Array    :一种特别的对象(数值下标，内部数据是有序的)
+			   
+		2.判断
+		    1.typeof  :可以判断：string /number /  boolean  /undefined /  function
+			          :不能判断：null与（返回）object  array与（返回）object
+		    2.instanceof :判断对象的具体类型(返回boolean类型)
+			3.===(尽量用三个等号，js里面两个等号会做数据转换(自动))
+			  可以判断： null 、undefined 
+--> 
+		
+		<script type="text/javascript">
+			//1.基本
+			// typeof返回数据类型的字符串(string)表达式
+			
+			var a;
+			console.log(a,typeof a==="undefined",a===undefined,typeof a); //undefined "undefined" true true
+			console.log(undefined==="undefined"); //false	
+		
+			a=4
+			console.log(typeof a==='number')  //true
+			a="atguigu"
+			console.log(typeof a==="string")  //true
+			a=true
+			console.log(typeof a==="boolean") //true
+			console.log("当A等于null时")
+			a=null
+			console.log(typeof a, a===null) //object true
+			
+			console.log('下面是对象判断使用instanceof')
+			//对象
+			
+			var b1={
+				b2:[1,'abc',console.log],
+				b3:function(){
+					console.log('b3')
+					return function(){
+						return '张三  '
+					}
+				}
+			}
+				console.log(typeof b1.b2, '不能判断object与array-------------') //object
+			console.log(b1 instanceof Object,b1 instanceof Array) //true  false
+			console.log(b1.b2 instanceof Object,b1.b2 instanceof Array) //true true
+			console.log(b1.b3 instanceof Function,b1.b3 instanceof Object) //true true
+			console.log(typeof b1.b3==='function') //true
+			
+			console.log('------------判断console.log')
+			console.log(typeof b1.b2[2],typeof b1.b2[2]==='function')
+			console.log('------------------')
+			//函数自行调用加() 例如b1.b2[2]();
+			//输出张三
+			console.log(b1.b3()())
+		</script>		
+		
+		
+		
+	</body>
+	
+</html>
