@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //得到总人数
+    //定义求和变量
+    //平均值变量
+    var allnum=prompt('请输入班级总人数');
+    var sun=0; 
+    var average=0;
+    for(var i=1;i<=allnum;i++){
+        var score=parseFloat(prompt('请输入第'+i+'个学生成绩'))
+        sun=sun+score
+    }
+    average=sun/allnum
+       alert('班级总成绩是：'+sun+'班级平均分是：'+average)
+    </script>
+</body>
+</html>
